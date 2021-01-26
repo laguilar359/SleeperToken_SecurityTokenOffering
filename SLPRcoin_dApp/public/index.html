@@ -1,0 +1,750 @@
+<html>
+  <title>SLPR Initial Coin Offering</title>
+  <head>
+    <!--link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type='application/javascript' src="validate.js"></script>
+    <link rel="stylesheet" href="./tabs.css">
+    <script src="bundle.js"></script-->
+  </head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <script type='application/javascript' src="validate.js"></script>
+  <script src="bundle.js"></script>
+  <link rel="stylesheet" href="./tabs.css">
+  <style>
+  body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+  body {font-size: 16px;}
+  img {margin-bottom: -8px;}
+  .mySlides {display: none;}
+  </style>
+  <body class="w3-content " style="max-width:1500px;">
+
+     <!-- Navbar (sit on top) -->
+     <div class="w3-top">
+      <div class="w3-bar w3-black w3-card" id="myNavbar">
+        <a href="#home" class="w3-bar-item w3-button w3-wide">
+          <i class="fas fa-usd w3-text-amber w3-large"></i>
+      <i class="fas fa-pound-sign w3-text-cyan w3-large"></i>
+      <i class="fas fa-ruble-sign w3-text-yellow w3-large"></i>
+      <i class="fas fa-rupee-sign w3-text-green w3-large"></i> 
+            Coin </img></a>
+        <!-- Right-sided navbar links -->
+        <div class="w3-right w3-hide-small">
+          <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+          <a href="#clarity" class="w3-bar-item w3-button">VALUE</a>
+          <a href="#features" class="w3-bar-item w3-button">FEATURES</a>
+          <a href="#smartcontract" ondblclick="document.getElementById('invest').style.display='block'" onclick="openTab(event, 'register')" class="w3-bar-item w3-button">
+            <i class="fab fa-ethereum"></i> INVEST</a>
+          <a href="#returns"  onclick="openTab(event, 'returns')" class="w3-bar-item w3-button"><i class="fab fa-ethereum"></i> Portfolio</a>
+          <a href="https://gist.github.com/laguilar359/7eb61c3608631baad26d77a905c87f1d" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Smart Contract</a>
+          <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
+          <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+        </div>
+        <!---->
+        <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+        <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Header with Slideshow -->
+<header class="w3-display-container w3-center" id="home">
+  <button class="w3-button w3-block w3-green w3-hide-large w3-hide-medium" onclick="document.getElementById('download').style.display='block'">Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="./Cryptocurrency.jpg" alt="Image 1" style="min-width:500px" width="1500" height="1000">
+    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge">Transform Your Investments</h1>
+        <hr class="w3-opacity">
+        <p>Convert your Under-performing Crypto Assets into Stabe Return Funds </p>
+        <p><a href="#smartcontract" onclick="openTab(event, 'register')" class="w3-green w3-round w3-button">
+          <i class="fa fa-bolt"></i> Register to Participate in ICO</a></p>
+          <!--button class="w3-green w3-round w3-button" href="#smartcontract" onclick="openTab(event, 'register')">Register <i class="fa fa-android"></i> <i class="fa fa-apple"></i> <i class="fa fa-windows"></i></button></p-->
+      </div>
+    </div>
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="Blockchain1.jpg" alt="Image 4" style="min-width:500px" width="1500" height="1000">
+    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge">Smart Choice</h1>
+        <hr class="w3-opacity">
+        <p>Maximize your returns with minimized Risk and stable dividends</p>
+        <p><a href="#smartcontract" onclick="openTab(event, 'register')" class="w3-green w3-round w3-button">
+          <i class="fa fa-bolt"></i> Register to Participate in ICO</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="bitcoinMarket.jpg" alt="Image 3" style="min-width:500px" width="1500" height="1000">
+    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge w3-text-red"><b>Invest in 
+          <i class="fas fa-usd w3-text-amber w3-large"></i>
+        <i class="fas fa-pound-sign w3-text-cyan w3-large"></i>
+        <i class="fas fa-ruble-sign w3-text-yellow w3-large"></i>
+        <i class="fas fa-rupee-sign w3-text-green w3-large"></i></b><br> Secure and Stable coin</h1>
+        <hr class="w3-opacity">
+        <p>Gain access to US and International Equity Markets</p>
+        <p><a href="#smartcontract" onclick="openTab(event, 'register')" class="w3-green w3-round w3-button">
+          <i class="fa fa-bolt"></i> Register to Participate in ICO</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="mySlides w3-animate-opacity">
+    <img class="w3-image" src="istockphoto.jpg" alt="Image 2" style="min-width:500px" width="1500" height="200%">
+    <div class="w3-display-left w3-padding w3-hide-small" style="width:35%">
+      <div class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large">
+        <h1 class="w3-xlarge w3-text-red"><b>Act Fast!</b><br> 
+          <i class="fas fa-usd w3-text-amber w3-large"></i>
+        <i class="fas fa-pound-sign w3-text-cyan w3-large"></i>
+        <i class="fas fa-ruble-sign w3-text-yellow w3-large"></i>
+        <i class="fas fa-rupee-sign w3-text-green w3-large"></i>  
+          Presale is Open</h1>
+        <hr class="w3-opacity">
+        <p>Right Time to Invest and secure your Returns </p>
+        <p><a href="#smartcontract" onclick="openTab(event, 'register')" class="w3-green w3-round w3-button">
+          <i class="fa fa-bolt"></i> Register to Participate in ICO</a></p>
+      </div>
+    </div>
+  </div>
+  
+  
+  <a class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey" onclick="plusDivs(1)">
+    Explore <i class="fas fa-usd w3-text-amber w3-large"></i>
+        <i class="fas fa-pound-sign w3-text-cyan w3-large"></i>
+        <i class="fas fa-ruble-sign w3-text-yellow w3-large"></i>
+        <i class="fas fa-rupee-sign w3-text-green w3-large"></i>  
+     <i class="fa fa-angle-right"></i></a>
+  <a class="w3-button w3-block w3-black w3-hide-large w3-hide-medium" onclick="plusDivs(1)">Explore <i class="fa fa-angle-right"></i></a>
+</header>
+
+<!--The App Section --->
+<div class="w3-padding-64 w3-light-grey" style="padding:16px 16px" id="about">
+  <div class="w3-row-padding">
+    <div class="w3-col l8 m6">
+      <h1 class="w3-jumbo"><b>
+        <i class="fas fa-usd w3-text-amber w3-jumbo"></i>
+        <i class="fas fa-pound-sign w3-text-cyan w3-jumbo"></i>
+        <i class="fas fa-ruble-sign w3-text-yellow w3-jumbo"></i>
+        <i class="fas fa-rupee-sign w3-text-green w3-jumbo"></i> 
+         Coin</b></h1>
+      <h1 class="w3-xxxlarge w3-text-green"><b>Security Token Powered by the Ethereum Network</b></h1>
+      <span class="w3-xlarge">Turn your Dead Investments into Profitable Returns.</span> 
+        <p>
+        SLPR Coin is a  SECURITY TOKEN OFFERING to raise funds for the investment in to diverse portfolio, which will then be invested for a defined 
+        time frame (2 year period).  The investors will receive a SLPR token that has potential to appreciate in value At the end of the 2 year period, which they can exchange back into ETH, or they can reinvest the appreciated 
+        SLPR token back into the next 2 year SLPR token series.  The current investors will receive preference to 
+        reinvest into the new token series before any new capital investment from new investors.
+      </p><p>
+        SLPR Coin has an investment hurdle rate for the Initial Series 1 STO, and if for any reason the 
+        hurdle is not met, the capital raised will be returned to the investors. The initial capital raise hurdle 
+        will be $1Million and have an initial cap of $1.5M.
+      </p><p>
+        This will allow users that have underperforming or “dead” cryptocurrency coins to exchange into 
+        SLPR tokens as well as allowing new capital investment into the SLPR token.  After an initial Series 1 
+        offering, the intent is to offer 3-4 offerings a year, each with its own 2 year investment strategy. 
+        The token investor will have the option to have any dividends either reinvested back into the strategy or 
+        receive the dividends as an income distribution.</p> 
+
+        
+        <!--button class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small" href="#smartcontract" onclick="openTab(event, 'register')">
+        
+      </button-->
+      <!--p>Available for <i class="fa fa-android w3-xlarge w3-text-green"></i> <i class="fa fa-apple w3-xlarge"></i> <i class="fa fa-windows w3-xlarge w3-text-blue"></i></p-->
+    </div>
+    <div class="w3-col l4 m6">
+      <img src="project2.png" class="w3-round-large w3-hide-small w3-hover-opacity-off" width="100%"> </img><p>
+        <img src="equity.png" class="w3-round-large w3-hide-small  w3-hover-opacity-off w3-grayscale" width="100%" height="50%">
+      <div class="w3-center "  style="padding:0px"><p>
+       
+        <a href="#smartcontract" onclick="openTab(event, 'register')" class="w3-green w3-round w3-button">
+        <i class="fab fa-ethereum"></i> Register to Participate in ICO</a>  </p>
+        <p>
+        <a href="#clarity" class="w3-blue w3-round w3-button">
+          <i class="fab fa-bitcoin"></i> Learn More</a>  </p>
+        <!--button class="w3-button w3-block w3-padding-large" href="#smartcontract" onclick="openTab(event, 'register')">
+          <i class="fa fa-hdd-o"></i> Register to Participate in ICO
+           <img src="Coin_Image2.jpg" class="w3-image w3-margin-top" width="335" height="471">
+        </button-->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--modal-->
+<div id="invest" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('invest').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">You must be a Whitelisted member to Invest</h2>
+        <p>Every one who wishes to Invest in SLPR coin must go through FINRA regulations. 
+          Please complete the Registration to become Whitelisted.</p>
+          <p><br><a href="#smartcontract" onclick="openTab(event, 'register')" class="w3-green w3-round w3-button">
+            <i class="fa fa-hdd-o"></i> Get WhiteListed</a>  
+            <a href="#about" class="w3-blue w3-round w3-button">
+              <i class="fa fa-hdd-o"></i> Learn More</a>  </p>
+    </div>
+  </div>
+</div>
+
+<div id="fast" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('fast').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Based on ERC20 Standards</h2>
+        <p> Inherits ERC20 CROWDSALE contract: Base architecture for crowdsales. Sets up a wallet to collect funds. 
+          Framework to send Ether to the Smart Contract & compute the amount of Tokens disbursed based on the rate.</p>
+    </div>
+  </div>
+</div>
+
+<div id="profitable" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('profitable').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Auto Minted Tokens</h2>
+        <p>The contract will mint Tokens anytime they are purchased, instead of having a preset 
+          total supply. The total amount of tokens in distribution is determined by how many are actually sold..</p>
+    </div>
+  </div>
+</div>
+
+<div id="vision" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('vision').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Limited Duration ICO</h2>
+        <p> TIMEDCROWDSALE: Sets parameters to start (openingTime) and end (closingTime) the Crowdsale.</p>
+    </div>
+  </div>
+</div>
+
+<div id="power" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('power').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Capped Token Sale</h2>
+        <p> CAPPEDCROWDSALE: Sets the max amount of runds it can raise in the Crowdsale..</p>
+    </div>
+  </div>
+</div>
+
+<div id="sharp" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('sharp').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Whitelist Preference</h2>
+        <p> WHITELISTCROWDSALE: Sets parameters to fullfill KYC requirements. 
+          Match contributions in the Crowdsale to real people. Investors must be WhiteListed before they can purchase Tokens.</p>
+    </div>
+  </div>
+</div>
+
+<div id="cloud" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('cloud').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Presale ICO and ICO</h2>
+        <p> STAGED CROWDSALE: Creates 2 stages (pre-sale and public sale) to set rates where investors can receive 
+          more Tokens in the pre-sale vs the public sale. In pre-sale, funds go to the wallet, not to the refund escrow vault..</p>
+    </div>
+  </div>
+</div>
+
+<div id="global" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('global').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Refundable</h2>
+        <p>REFUNDABLECROWDSALE: Sets a minimum goal of funds to raise in the Crowdsale.
+           If goal isn't reached, it will refund investors.</p>
+    </div>
+  </div>
+</div>
+
+<div id="storage" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('storage').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Access to International Markets</h2>
+        <p> Gain access to the US and International equity markets directly from their cryptocurrency deposits</p>
+    </div>
+  </div>
+</div>
+
+<div id="safe" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('safe').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Profit sharing</h2>
+        <p> DISTRIBUTION & VESTING: Set amount of Tokens to distribute to Founders, Company, and Public..</p>
+    </div>
+  </div>
+</div>
+
+<div id="stable" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('stable').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Compliance with FINRA</h2>
+        <p>All users must undergo verification process to comply with regulatory (KYC, Suitability, and AML) requirements</p>
+    </div>
+  </div>
+</div>
+
+<div id="connected" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('connected').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Equity</h2>
+        <p> Purpose: Investment Token.</p>
+    </div>
+  </div>
+</div>
+
+<div id="hd" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-light-grey">
+      <i onclick="document.getElementById('hd').style.display='none'" class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"></i>
+      <h2 class="w3-wide">Security backed</h2>
+        <p> Underlying Value: Asset Backed Token.</p>
+    </div>
+  </div>
+</div>
+
+<!--Clarity Section-->
+<div class="w3-padding-64 w3-light-grey"  style="padding:512px 16px" id="clarity">
+  <div class="w3-row-padding">
+    <div class="w3-col l4 m6">
+      <img class="w3-image w3-round-large w3-hide-small w3-hover-opacity-off" src="Blockchain2.jpg" alt="App"  width="100%" height="471">
+      <p><img class="w3-round-large w3-hide-small w3-grayscale w3-hover-opacity-off" src="workflow-1.png" alt="Investment workflow" width="100%" height="50%" class="image"></img></p>
+    </div>
+    <div class="w3-col l8 m6">
+      <h1 class="w3-jumbo"><b>
+        <i class="fas fa-usd w3-text-amber w3-jumbo"></i>
+      <i class="fas fa-pound-sign w3-text-cyan w3-jumbo"></i>
+      <i class="fas fa-ruble-sign w3-text-yellow w3-jumbo"></i>
+      <i class="fas fa-rupee-sign w3-text-green w3-jumbo"></i> 
+         Coin Value</b></h1>
+      <h1 class="w3-xxxlarge w3-text-red"><b>Invest Crypto in US Equity Markets</b></h1>
+      <p><span class="w3-xlarge">A revolution in Personal Finance.</span><br> 
+        There are many regulatory hurdles that currently exist for US investors if they want to get access to 
+        the US equity markets directly from their cryptocurrency deposits.  Currently, in order to have access to
+        US equity and capital markets, investors must open an account following several suitability, 
+        Know Your Client , and Anti Money Laundering regulations . </p> <p>
+        This new  workflow process for US based and approved foreign country investors will incorporate a 
+        smart contract that will allow the investor to exchange their cryptocurrency from ETH into SLPR tokens .  
+        This would allow the client to get access to the managed portfolio strategies in one or all four markets ,
+         and would allow the investor to exit back through the exchange with SLPR tokens that have realized an 
+         increase in value.  The investor would then be able to exchange the ETH back into their cryptocurrency of 
+         their choice at their preferred cryptocurrency exchange.
+        </p>
+        <p><br><a href="#smartcontract" onclick="openTab(event, 'register')" class="w3-green w3-round w3-button">
+          <i class="fa fa-hdd-o"></i> Register to Participate in ICO</a>  
+          <a href="#features" class="w3-blue w3-round w3-button">
+            <i class="fa fa-hdd-o"></i> Learn More</a>  </p>
+    </div>
+  </div>
+</div>
+
+<!--dapp Tab-->
+      <div class="container" id="smartcontract"  style="padding:64px 8px">
+          <div class="row">
+            <!--img src="./Cryptocurrency.jpg" alt="SLPR Coin Crowd Sale" height="200" class="image">
+            <img src="crowd.png" alt="gold coin" width="1500" height="100"  class="image"></img-->
+            <button hidden class="tab" id="ContractAddress"></button> 
+            <!--div class="overlay"> 
+              </div-->
+          </div>
+
+          <!--div class="col-sm-4"-->
+          <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'register')"><img src="./logo.png" class="scale-down" height="25"><b>Register</b></button>
+            <button class="tablinks" onclick="openTab(event, 'tokens')"><img class="scale-down" src="./logo.png" height="25"><b>Buy Coins</b></button>
+            <button class="tablinks" onclick="openTab(event, 'contract')"><img class="scale-down" src="./logo.png" height="25"><b>ICO Progress</b></button>
+            <button class="tablinks" onclick="openTab(event, 'supply')"><img class="scale-down" src="./logo.png" height="25"><b>Manage Supply</b></button>
+            <button class="tablinks" onclick="openTab(event, 'returns')"><img class="scale-down" src="./logo.png" height="25"><b>View Folio</b></button>
+            <button class="tablinks" onclick="openTab(event, 'whitepaper')"><img class="scale-down" src="./logo.png" height="25"><b>White Paper</b></button>
+            <button class="tablinks" onclick="openTab(event, 'faqs')"><img class="scale-down" src="./logo.png" height="25"><b>FAQs</b></button>
+          </div>
+          <!--/div-->
+        
+          <div class="row">
+            <Tab content>
+              <div id="register" class="tabcontent">
+                  <!--div class="col-75">
+                  <div class="container"-->
+<!--registration form-->
+                <form id= 'register' name='registrationform_8' onSubmit="return formValidation();">
+          
+                  <div class="row">
+                    <div class="col-50">
+                      <h3>Profile Data</h3>
+                      <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                      <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+                      <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                      <input type="text" id="email" name="email" placeholder="john@example.com">
+                      <label for="phone">><i class="fa fa-phone"></i> Primary Contact number:</label>
+                      <input type="text" id="phone" name="phone" placeholder="Format: 123-456-7890" required>
+                      <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                      <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+                      <label for="city"><i class="fa fa-institution"></i> City</label>
+                      <input type="text" id="city" name="city" placeholder="New York">
+          
+                      <div class="row">
+                        <div class="col-75">
+                          <label for="state"><i class="fa fa-institution"></i>State</label>
+                          <input type="text" id="state" name="state" placeholder="NY">
+                        </div>
+                        <div class="col-75">
+                          <label for="zip"><i class="fa fa-map-marker"></i>Zip</label>
+                          <input type="text" id="zip" name="zip" placeholder="10001">
+                        </div>
+                        <div class="col-75">
+                          <label for="country"><i class="fa fa-map-marker"></i>Country:</label>
+                          <select name="country" required>
+                              <option selected="" value="US"></option>
+                              <option value="AU">Australia</option>
+                              <option value="CA">Canada</option>
+                              <option value="IN">India</option>
+                              <option value="RU">Russia</option>
+                              <option value="US" selected>USA</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+          
+                    <div class="col-50">
+                      <h3>ID Verification</h3>
+                      <label for="fname">Accepted forms of ID</label>
+                      <div class="icon-container">
+                        <small><i class="fa fa-image" style="color:navy;"></i>Driving License</small>
+                        <small><i class="fa fa-image" style="color:blue;"></i>State ID</small>
+                        <small><i class="fa fa-image" style="color:red;"></i>Passport</small>
+                        <small><i class="fa fa-image" style="color:orange;"></i>Ctizenship Card</small>
+                      </div>
+                      <label for="cname"><i class="fa fa-user"></i> Name as on ID Card</label>
+                      <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+                      <label for="ssn"><i class="fa fa-user"></i> Social Secuirty Number</label>
+                      <input type="password" id="ssn" name="ssn" placeholder="0123456789">
+                      <label for="ccnum"><i class="fa fa-shield"></i> ID Proof number</label>
+                      <input type="text" id="ccnum" name="cardnumber" placeholder="1111222233334444">
+                      <label id="doi">Date Issued:</label>
+                      <input id="doi" type="datetime-local" required>
+                      <label id="doe">Expiry Date:</label>
+                      <input id="doe" type="datetime-local" required>
+                      <div class="row">
+                        <div id="idproof" class="col-75"><br>
+                          <label for="avatar"><i class="fa fa-image"></i>Upload ID proof:</label>
+                          <input type="file" id="proof" name="idProof" accept="image/png, image/jpeg" required>
+                        </div>
+                        <div id="wallet" class="col-75"><br>
+                          <label for="account">Wallet Account:</label>
+                            <input type="text" name="account" required>
+                            <label for="provider"><i class="fa fa-globe"></i>Wallet Provider:</label>
+                            <select name="provider" required>
+                                <option selected="" value="Default">(Select Your Wallet Provider)</option>
+                                <option value="MM">MetaMask</option>
+                                <option value="HW">Hardware</option>
+                                <option value="MW">MyWallet</option>
+                                <option value="YW">YourWallet</option>
+                                <option value="NW">NoWallet</option>
+                              </select>
+                        </div>
+                      </div>
+                      <input type="submit" value="Register" class="btn">
+                    </div>
+                  
+                  </div>
+                </form>
+              </div>
+            <!--/div-->
+            </div>  
+             
+<!--SmartContract section-->
+
+            <div id="loadcontract" class="tabcontent">
+              <input hidden id="contract-functions"></input> 
+              <!--place holder for dynamically loading tab content -->
+            </div>
+            <div id="tokens" class="tabcontent"> 
+              <!--place holder for dynamically loading tab content -->
+            </div>
+            
+            <div id="contract" class="tabcontent"> 
+              <!--place holder for dynamically loading tab content -->
+            </div>
+            </div>
+
+            <div id="supply" class="tabcontent"> 
+              <!--place holder for dynamically loading tab content -->
+            </div> 
+
+            <div id="returns" class="tabcontent w3-container w3-black w3-center w3-padding-16">
+      <!--Portfolio Returns-->
+                <!--div class="w3-container w3-black w3-center w3-padding-16" id="returns"-->
+                  <h1 class="w3-jumbo w3-text-cyan">
+                    <i class="fas fa-usd w3-text-amber w3-jumbo"></i>
+                    <i class="fas fa-pound-sign w3-text-cyan w3-jumbo"></i>
+                    <i class="fas fa-ruble-sign w3-text-yellow w3-jumbo"></i>
+                    <i class="fas fa-rupee-sign w3-text-green w3-jumbo"></i> 
+                    Trust Series 1</h1>
+                  <p><h2>Portfolio Composition : SLPR</h2></p>
+                  <p><b><i class='fa fa-usd w3-text-yellow '></i> 32.036 <i class='fa fa-arrow-up w3-text-green'></i> 1.612 (0.4954 %)</b>AS OF 4:01:07PM CT 01/25/2021 <br>
+                  <small>Quotes delayed at least 15 min. </small></p>
+                  <div class="w3-row" style="margin-top:32px">
+                    <!--div class="w3-col s3" -->
+                      <div class="w3-col l4 m6 w3-opacity w3-hover-opacity-off">
+                        <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="holdings.PNG" alt="holdings" width="335" height="471">
+                      <p><img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="style.PNG" alt="holdings" width="335" height="471">
+                      </p></div>
+                    <div class="w3-col l4 m6 w3-opacity w3-hover-opacity-off">
+                      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="Regional_exposure.PNG" alt="region" width="335" height="471">
+                    <p>
+                      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="country.PNG" alt="country" width="335" height="471"></p>
+                      <p>
+                        <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="market.PNG" alt="country" width="335" height="471"></p>
+                        <div class="w3-row w3-hover-opacity-off" style="margin-top:32px">
+                          <a href="SmaCross.html" class="w3-dark-grey w3-round w3-button w3-padding-large">
+                            <i class="fa fa-usd"></i> Trading strategy</a> <p>
+                              <a href="report.html" class="w3-text-amber w3-round w3-button w3-padding-large">
+                                <i class="fa fa-usd"></i>Strategy Tearsheet</a>
+                            </p> </div>
+                      </div>
+                    <div class="w3-col l4 m6 w3-opacity w3-hover-opacity-off">
+                      <img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="sector.PNG" alt="region" width="335" height="471">
+                      <p><img class="w3-image w3-round-large w3-hide-small w3-grayscale" src="industry.PNG" alt="country" width="335" height="471">
+                      </p>
+                      <div class="w3-row w3-hover-opacity-off" style="margin-top:32px">
+                        <a href="backtest.html" class="w3-dark-grey w3-round w3-button w3-padding-large">
+                        <i class="fa fa-usd"></i> Backtesting Results</a>  </div>
+                    </div>         
+                  </div>
+                <!--/div-->
+            </div> 
+
+            <div id="whitepaper" class="tabcontent">
+              <!--place holder for dynamically loading tab content -->
+            </div> 
+
+            <div id="faqs" class="tabcontent">
+              <!--place holder for dynamically loading tab content -->
+            </div> 
+      </div>
+
+
+
+   
+<!--place holder-->
+
+<!-- Features Section -->
+  <div class="w3-container w3-padding-16 w3-dark-grey w3-center" id="features">
+    <h1 class="w3-jumbo w3-text-orange"><b>SmartContract on the Ethereum Network</b></h1>
+    <p><h2><i class="fas fa-usd w3-text-amber w3-xxlarge"></i>
+      <i class="fas fa-pound-sign w3-text-cyan w3-xxlarge"></i>
+      <i class="fas fa-ruble-sign w3-text-yellow w3-xxlarge"></i>
+      <i class="fas fa-rupee-sign w3-text-green w3-xxlarge"></i> Features</h2></p>
+    
+    <div class="w3-row" style="margin-top:32px">
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" >
+         <i class='fab fa-ethereum w3-text-yellow w3-jumbo' onclick="document.getElementById('fast').style.display='block'"></i>
+        <p>Powered by Ethereum Blockhain</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('profitable').style.display='block'">
+        <i class= "fab fa-bitcoin w3-text-orange w3-jumbo"></i>
+        <p>Adheres to ERC Standards</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('vision').style.display='block'">
+        <i class="fab fa-gg-circle w3-text-cyan w3-jumbo"></i>
+        <p>Security Token</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('power').style.display='block'">
+        <i class="fas fa-dollar-sign w3-text-green w3-jumbo"></i>
+        <p>Asset Backed</p>
+      </div>
+    </div>
+
+    <div class="w3-row" style="margin-top:32px">
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('sharp').style.display='block'">
+          <i class="fas fa-euro-sign w3-text-white w3-jumbo"></i>
+          <p>Stable Dividends</p>
+        </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('cloud').style.display='block'">
+        <i class="fas fa-pound-sign w3-text-blue w3-jumbo"></i>
+        <p>Appraised Value</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('global').style.display='block'">
+        <i class="fas fa-yen-sign w3-text-amber w3-jumbo"></i>
+        <p>Refundable Crowdsale</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('storage').style.display='block'">
+        <i class="fas fa-rupee-sign w3-text-cyan w3-jumbo"></i>
+        <p>Diversified Investments</p>
+      </div>
+    </div>
+    
+    <div class="w3-row" style="margin-top:32px">
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('safe').style.display='block'">
+        <i class="fas fa-lira-sign w3-text-sand w3-jumbo"></i>
+        <p>Refundable</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('stable').style.display='block'">
+        <i class="fas fa-ruble-sign w3-text-orange w3-jumbo"></i>
+        <p>SEC/FINRA Compliant</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('connected').style.display='block'">
+        <i class="fas fa-tenge w3-text-cyan w3-jumbo"></i>
+        <p>Extendable to multiple Series</p>
+      </div>
+      <div class="w3-col s3  w3-opacity w3-hover-opacity-off" onclick="document.getElementById('hd').style.display='block'">
+        <i class="fas fa-won-sign w3-text-pink w3-jumbo"></i>
+        <p>Limited Supply</p>
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  
+
+  <!-- Team Section -->
+  <div class="w3-container" style="padding:32px 16px" id="team" height=80%>
+    <h3 class="w3-center">The Visionaries</h3>
+    <!--p class="w3-center w3-large">The ones behind the  </p-->
+    <div class="w3-row-padding w3-grayscale" style="margin-top:16px">
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="./scott.png" alt="Dan" style="width:100%">
+          <div class="w3-container">
+            <h3><i class="fas fa-usd w3-text-red w3-xlarge"></i>cott Fergusson</h3>
+            <p class="w3-opacity">Algo Guru</p>
+             Seasoned professional driven by curiosity to learn from data and demonstrated ability to deliver valuable insights using data analytics and machine learning.
+            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="./Luis.png" alt="Jane" style="width:100%">
+          <div class="w3-container">
+            <h3><i class="fas fa-pound-sign w3-text-red w3-xlarge"></i>uis Aguilair</h3>
+            <p class="w3-opacity">Smart Contracts Architect</p>
+            Seasoned professional driven by curiosity to learn from data and demonstrated ability to deliver valuable insights using data analytics and machine learning.
+            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="./PD-2.png" alt="Mike" height="48%">
+          <div class="w3-container">
+            <h3><i class="fas fa-ruble-sign w3-text-red w3-xlarge"></i>rasanna Devalaraju</h3>
+            <p class="w3-opacity">Solution Director</p>
+            Seasoned professional driven by curiosity to learn from data and demonstrated ability to deliver valuable insights using data analytics and machine learning.
+            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <div class="w3-card">
+          <img src="./Richard1.png" alt="John" style="width:100%">
+          <div class="w3-container">
+            <h3><i class="fas fa-rupee-sign w3-text-red w3-xlarge"></i>ichard Torres</h3>
+            <p class="w3-opacity">Product Director</p>
+            Seasoned professional driven by curiosity to learn from data and demonstrated ability to deliver valuable insights using data analytics and machine learning.
+            <p><button class="w3-button w3-light-grey w3-block"><i class="fa fa-envelope"></i> Contact</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-light-grey" style="padding:32px 16px" id="contact">
+    <h3 class="w3-center">CONTACT</h3>
+    <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+    <div style="margin-top:48px">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
+      
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
+        <p>
+          <button class="w3-button w3-black" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </p>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="w3-center w3-black w3-padding-64">
+    <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  </footer>
+ 
+
+    <script>
+
+      // Slideshow
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";  
+        }
+        x[slideIndex-1].style.display = "block";  
+      }
+
+      function openTab(evt, tabName) {
+          var i, tabcontent, tablinks;
+          // Get all elements with class="tabcontent" and hide them
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          // Get all elements with class="tablinks" and remove the class "active"
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          // Show the current tab, and add an "active" class to the button that opened the tab
+          document.getElementById(tabName).style.display = "block";
+          evt.currentTarget.className += " active";
+      }
+    </script>
+
+  </body>
+</html>

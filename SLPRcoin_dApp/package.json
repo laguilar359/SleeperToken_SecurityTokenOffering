@@ -1,0 +1,27 @@
+{
+  "name": "slprcoin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@openzeppelin/contracts": "^2.5.1",
+    "jquery-serializejson": "^3.2.0",
+    "openzeppelin-solidity": "^3.3.0",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "web3": "^1.2.5-rc.0",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.4.1"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
+}
