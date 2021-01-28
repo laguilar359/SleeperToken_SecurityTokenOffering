@@ -1,6 +1,6 @@
 # SLPR Security Token Offering and dApp
 
-<img src="public/readme.PNG" width="100%" height="500"></img>
+<img src="SLPRcoin_dApp/public/readme.PNG" width="100%" height="500"></img>
 
 <h2> Problem Statement </h2>
 
