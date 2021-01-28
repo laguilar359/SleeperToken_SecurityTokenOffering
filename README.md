@@ -193,6 +193,8 @@ SLPR Coin is a Crypto security: an asset on a blockchain that, in addition, offe
 
         - `Crowdsale`
 
+            - Sets up the basic crowdsale architecture and passes essential functions into our contract such as `buyTokens`, `_preValidatePurchase`, `_deliverTokens`, `_processPurchase`, and `_forwardFunds`, which make the token verification, purchasing, and deposit possible. In addition, it provides the `rate`, `wallet`, and `token` parameters which are passed into our contract's `constructor`.   
+
         - `MintedCrowdsale`
 
         - `CappedCrowdsale`
@@ -297,7 +299,7 @@ SLPR Coin is a Crypto security: an asset on a blockchain that, in addition, offe
     - Creating a user interface to interact with the smart contract
     - Using Javascript, HTML5 Document Object Model and W3 CSS, we have developed the Contract forms dynamically without having to create each of the form elements. For more information on DOM and CSS, please refer to https://w3schools.com. A snapshot of the user interface of our contract is given below:
 
-    - ![User Registration](public/registration.PNG)
+    - ![User Registration](SLPRcoin_dApp/public/registration.PNG)
 
     - deploying the contract to localtestnet
 
