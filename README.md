@@ -197,15 +197,32 @@ SLPR Coin is a Crypto security: an asset on a blockchain that, in addition, offe
 
         - `MintedCrowdsale`
 
+            - Enables the crowdsale contract to inherit the `mint` properties from our token's `ERC20Mintable` component. This allows the contract to be the minter during the duration of the crowdsale. At the end of the sale, the contract transfers the `minter` to the `wallet` once the `finalization` function is called.
+
         - `CappedCrowdsale`
 
+            - Sets a `cap` to limit the funds raised during our crowdsale. Uses the `_preValidatePurchase` function to check that the `cap` isn't exceeded before allowing the purchase to move forward.
+
         - `TimedCrowdsale`
+
+            - Allows the contract to set up `open` and `close` times for our fund-raising period. Uses the `_preValidatePurchase` function to enforce the `onlyWhileOpen` modifier before allowing the purchase to proceed.
+
+        - `WhitelistCrowdsale`
+
+            - Designates the crowdsale contract as a `WhitelistAdmin` so that it can set accounts as `WhiteListed` once they pass KYC, Suitability, and AML requirements during the Registration process.
 
         - `RefundablePostDeliveryCrowdsale`
 
             - Since `RefundablePostDeliveryCrowdsale` inherits the `RefundableCrowdsale` contract, which requires a `goal` parameter, we must call the `RefundableCrowdsale` constructor from  `SLPRCoinCrowdsale` constructor as well as the others. `RefundablePostDeliveryCrowdsale` does not have its own constructor, so we will just use the `RefundableCrowdsale` constructor that it inherits.
 
             - If the `RefundableCrowdsale` constructor is not called with proper arguments, the `RefundablePostDeliveryCrowdsale` will fail since it relies on it (it inherits from `RefundableCrowdsale`), and does not have its own constructor.
+
+        - Additional Contract Properties:
+
+            - `TokenTimelock` to freeze funds during trading period using the `releaseTime` parameter. Allows us to ensure that investors do not withdraw or trade their tokens before series ends.
+            - `Contributions mapping` to maintain public records of all investor contributions, which can be called using the `getUserContribution` function created within the contract.
+            - `Capped Crowdsale` to designate variable token pricing during `PreICO` and `ICO` stages. Uses the `enum` value type to create stages as user-defined types.
+            - `Distribution Percentages` to allocate specific percentages in our Token Issuance strategy across `Public Sale`, `Founders`, `Foundation`, and `Partners` funds.
     </details>
 <br>
 
