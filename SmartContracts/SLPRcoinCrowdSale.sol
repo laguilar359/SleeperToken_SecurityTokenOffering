@@ -1,26 +1,40 @@
 pragma solidity ^0.5.0;
 
 import "./SLPRcoin.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/IERC20.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20Detailed.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20Mintable.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/ERC20Pausable.sol";
-// import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/access/roles/MinterRole.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/token/ERC20/TokenTimelock.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/Crowdsale.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/emission/MintedCrowdsale.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/CappedCrowdsale.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/TimedCrowdsale.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/validation/WhitelistCrowdsale.sol";
-import "https://github.com/OpenZeppelin/openzeppelin-contracts/blob/release-v2.5.0/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20Detailed.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20Mintable.sol";
+import "@openzeppelin/contracts/token/ERC20/ERC20Pausable.sol";
+import "@openzeppelin/contracts/token/ERC20/TokenTimelock.sol";
+import "@openzeppelin/contracts/crowdsale/Crowdsale.sol";
+import "@openzeppelin/contracts/crowdsale/emission/MintedCrowdsale.sol";
+import "@openzeppelin/contracts/crowdsale/validation/CappedCrowdsale.sol";
+import "@openzeppelin/contracts/crowdsale/validation/TimedCrowdsale.sol";
+import "@openzeppelin/contracts/crowdsale/validation/WhitelistCrowdsale.sol";
+import "@openzeppelin/contracts/crowdsale/distribution/RefundablePostDeliveryCrowdsale.sol";
 
 /** The SLPRcoinCrowdSale contract inherits standards and properties from the following Crowdsale contracts:
- * Crowdsale:
- * MintedCrowdsale:
- * TimedCrowdsale:
- * WhitelistCrowdsale:
- * RefundablePostDeliveryCrowdsale:
+ * 
+ * CROWDSALE: Base architecture for crowdsales. Sets up a wallet to collect funds. Framework to send Ether to the Smart Contract &
+ * compute the amount of Tokens disbursed based on the rate.
+ * 
+ * MINTEDCROWDSALE: The contract will mint Tokens anytime they are purchased, instead of having a preset total supply.
+ * The total amount of tokens in distribution is determined by how many are actually sold.
+ * 
+ * TIMEDCROWDSALE: Sets parameters to start (openingTime) and end (closingTime) the Crowdsale.
+ * 
+ * CAPPEDCROWDSALE: Sets the max amount of runds it can raise in the Crowdsale.
+ * 
+ * WHITELISTCROWDSALE: Sets parameters to fullfill KYC requirements. Match contributions in the Crowdsale to real people. Investors 
+ * must be WhiteListed before they can purchase Tokens.
+ * 
+ * STAGED CROWDSALE: Creates 2 stages (pre-sale and public sale) to set rates where investors can receive more Tokens in the pre-sale
+ * vs the public sale. In pre-sale, funds go to the wallet, not to the refund escrow vault.
+ * 
+ * REFUNDABLECROWDSALE: Sets a minimum goal of funds to raise in the Crowdsale. If goal isn't reached, it will refund investors.
+ * 
+ * DISTRIBUTION & VESTING: Set amount of Tokens to distribute to Founders, Company, and Public.
  */
 
 contract SLPRcoinCrowdSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCrowdsale, WhitelistCrowdsale, RefundablePostDeliveryCrowdsale {
@@ -46,6 +60,7 @@ contract SLPRcoinCrowdSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Timed
     uint256 public foundersPercentage    = 10;
     uint256 public foundationPercentage  = 10;
     uint256 public partnersPercentage    = 10;
+    uint256 private _weiRaised = 0;
     
     // Create addresses for  Token Reserve funds
     address public foundersFund;
@@ -152,8 +167,31 @@ contract SLPRcoinCrowdSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Timed
         
     }
     
-    function _buyTokens(address beneficiary, uint256 weiAmount) public nonReentrant payable {
-        super.buyTokens(beneficiary);
+    /**
+     * @return the amount of wei raised.
+     */
+    function fundsRaised() public view returns (uint256) {
+        return _weiRaised;
+    }
+    
+    function _buyTokens(address beneficiary, uint256 amount) public nonReentrant payable {
+        // super.buyTokens(beneficiary);
+        uint256 weiAmount = amount;
+        _preValidatePurchase(beneficiary, weiAmount);
+    
+        // calculate token amount to be created
+        uint256 tokens = _getTokenAmount(weiAmount);
+
+        // update state
+        _weiRaised = _weiRaised.add(weiAmount);
+
+        _processPurchase(beneficiary, tokens);
+        emit TokensPurchased(_msgSender(), beneficiary, weiAmount, tokens);
+
+        _updatePurchasingState(beneficiary, weiAmount);
+
+        _forwardFunds();
+        _postValidatePurchase(beneficiary, weiAmount);
     }
     
     
@@ -188,9 +226,17 @@ contract SLPRcoinCrowdSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, Timed
             //ERC20Pausable _pausableToken = ERC20Pausable(token);
             //_pausableToken.unpause();
             //_pausableToken.transferOwnership(wallet);
+            
+            //_mintableToken.transferOwnership(wallet);
         //}    
             
         super._finalization();    
+    }
+    
+    /**
+     * @dev fallback function
+     */
+    function () external payable {
     }
         
     
@@ -225,10 +271,10 @@ contract SLPRcoinCrowdSaleDeployer {
     )
         public
     {
-        // @TODO: create the PupperCoin and keep its address handy
-            // Create the PupperCoin by defining a variable like `PupperCoin token` and setting it to equal new PupperCoin(). 
-            // Inside of the parameters of new PupperCoin, pass in the name and symbol variables. 
-            // For the initial_supply variable that PupperCoin expects, pass in 0
+        // @TODO: create the SLPRcoin and keep its address handy
+            // Create the SLPRcoin by defining a variable like `SLPRcoin token` and setting it to equal new SLPRcoin(). 
+            // Inside of the parameters of new SLPRcoin, pass in the name and symbol variables. 
+            // For the initial_supply variable that SLPRcoin expects, pass in 0
 
         SLPRcoin token = new SLPRcoin(name, symbol, 0);
 
@@ -237,7 +283,7 @@ contract SLPRcoinCrowdSaleDeployer {
         
         token_address = address(token);
         
-        // @TODO: create the PupperCoinSale and tell it about the token, 
+        // @TODO: create the SLPRcoinCrowdSale and tell it about the token, 
         // set the goal, and set the open and close times to now and now + 24 weeks.
 
         SLPRcoinCrowdSale slpr_sale = new SLPRcoinCrowdSale(rate, wallet, token, cap, fakenow, fakenow + 1 days, goal, _foundersFund, _foundationFund, _partnersFund, fakenow + 104 weeks);
@@ -245,15 +291,16 @@ contract SLPRcoinCrowdSaleDeployer {
         
         // make the SLPRcoinCrowdSale contract a minter, then have the SLPRcoinCrowdSaleDeployer renounce its minter role
         token.addMinter(token_sale_address);
+        token.addMinter(wallet);
         token.renounceMinter();
         
         // make the SLPRcoinCrowdSale contract the Whitelist Admin, then have the SLPRcoinCrowdSaleDeployer renounce its 
         // Whitelist Admin role.
+        slpr_sale.addWhitelistAdmin(token_sale_address);
         slpr_sale.addWhitelistAdmin(wallet);
         slpr_sale.renounceWhitelistAdmin();
         
         // Give owner rights to the SLPRcoinCrowdSale contract
-        //slpr_sale.roles.addOwner(token_sale_address);
-        //slpr_sale.renounceowner();
+        //SLPRcoinCrowdSaleDeployer.transferOwnership(wallet);
     }
 }
