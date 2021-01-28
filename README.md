@@ -180,7 +180,7 @@ SLPR Coin is a Crypto security: an asset on a blockchain that, in addition, offe
 
 - <details><summary> ERC20 SLPRCoin </summary>
 
-    - [SLPRCoin](SLPRCoin.sol) simply inherits the  standard `ERC20Mintable` and `ERC20Detailed` contracts, by taking the  the `decimals` parameter which is hardcoded to `18` in our solidity program.
+    - [SLPRCoin](SmartContracts/SLPRCoin.sol) simply inherits the  standard `ERC20Mintable` and `ERC20Detailed` contracts, by taking the  the `decimals` parameter which is hardcoded to `18` in our solidity program.
 
     - This contract initiates ERC20Mintable contract by passing the Name, Symbol and decimals parameters.
 
@@ -189,7 +189,7 @@ SLPR Coin is a Crypto security: an asset on a blockchain that, in addition, offe
 
 - <details><summary> SLPRCoinCrowdsale</summary>
 
-    - [SLPRCoinCrowdsale](SLPRCoinCrowdSale.sol) inherits the following OpenZeppelin contracts:
+    - [SLPRCoinCrowdsale](SmartContracts/SLPRCoinCrowdSale.sol) inherits the following OpenZeppelin contracts:
 
         - `Crowdsale`
 
