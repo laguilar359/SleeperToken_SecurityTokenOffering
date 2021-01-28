@@ -27,7 +27,7 @@
 
 <table><tr><td>
 
-<img src="public/workflow-1.png" width="100%" height="500"></img>
+<img src="SLPRcoin_dApp/public/workflow-1.png" width="100%" height="500"></img>
 
 </td><td width="600">
 
@@ -58,7 +58,7 @@
 
 </td><td>
 
-![marketOpportunity](public/market_opp.PNG)
+![marketOpportunity](SLPRcoin_dApp/public/market_opp.PNG)
 
 </td></tr></table>
 </details><br>
@@ -67,7 +67,7 @@
 
 SLPR Coin is a Crypto security: an asset on a blockchain that, in addition, offers the prospect of future payments, for example a share of profits.
 
-- ![Token Classification](public/token_classification.PNG)
+- ![Token Classification](SLPRcoin_dApp/public/token_classification.PNG)
 
 </details><br>
 
@@ -134,20 +134,20 @@ SLPR Coin is a Crypto security: an asset on a blockchain that, in addition, offe
 <table><tr>
 
 <td><tr>
-<td><img src="public/solidity.PNG" width="30" height ="30"> Solidity "^5.17.0" </img></td>
-<td><img src="public/truffle.PNG" width="30" height ="30"> Truffle "^1.0.17" </img></td>
-<td><img src="public/ganache.PNG" width="30" height ="30"> Ganache "^5.17.0" </img></td>
-<td><img src="public/metamask.PNG" width="30" height ="30"> Meta Mask "^5.17.0" </img></td>
+<td><img src="SLPRcoin_dApp/public/solidity.PNG" width="30" height ="30"> Solidity "^5.17.0" </img></td>
+<td><img src="SLPRcoin_dApp/public/truffle.PNG" width="30" height ="30"> Truffle "^1.0.17" </img></td>
+<td><img src="SLPRcoin_dApp/public/ganache.PNG" width="30" height ="30"> Ganache "^5.17.0" </img></td>
+<td><img src="SLPRcoin_dApp/public/metamask.PNG" width="30" height ="30"> Meta Mask "^5.17.0" </img></td>
 </tr><tr>
-<td><img src="public/zeppelin.PNG" width="100" height ="30"> OpenZeppelin "^2.5.1" </img></td>
-<td><img src="public/webpack.PNG" width="30" height ="30"> Webpack "^4.32.2" </img></td>
-<td><img src="public/web3.PNG" width="30" height ="30"> Web3 "^1.2.5-rc.0" </img></td>
-<td><img src="public/python.PNG" width="30" height ="30"> Python "^3.5.0" </img></td>
+<td><img src="SLPRcoin_dApp/public/zeppelin.PNG" width="100" height ="30"> OpenZeppelin "^2.5.1" </img></td>
+<td><img src="SLPRcoin_dApp/public/webpack.PNG" width="30" height ="30"> Webpack "^4.32.2" </img></td>
+<td><img src="SLPRcoin_dApp/public/web3.PNG" width="30" height ="30"> Web3 "^1.2.5-rc.0" </img></td>
+<td><img src="SLPRcoin_dApp/public/python.PNG" width="30" height ="30"> Python "^3.5.0" </img></td>
 </tr><tr>
-<td><img src="public/react.PNG" width="30" height ="30"> React Js </img></td>
-<td><img src="public/javascript.PNG" width="30" height ="30"> Javascript  </img></td>
-<td><img src="public/html.PNG" width="30" height ="30"> HTML5 </img></td>
-<td><img src="public/css.PNG" width="30" height ="30"> CSS </img></td>
+<td><img src="SLPRcoin_dApp/public/react.PNG" width="30" height ="30"> React Js </img></td>
+<td><img src="SLPRcoin_dApp/public/javascript.PNG" width="30" height ="30"> Javascript  </img></td>
+<td><img src="SLPRcoin_dApp/public/html.PNG" width="30" height ="30"> HTML5 </img></td>
+<td><img src="SLPRcoin_dApp/public/css.PNG" width="30" height ="30"> CSS </img></td>
 </tr>
 </table>
 </details>
